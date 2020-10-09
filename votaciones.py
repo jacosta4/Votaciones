@@ -11,6 +11,12 @@
 # muestra resultados finales, ganador, numero de votos,y ganador
 # Crea un archivo .txt con los votos y el ganador
 
+## -- PENDIENTE -- ##
+# arreglar en la funcion sorteddicc si hay empate, pues solo impreme un ganador
+
+import functions
+
+
 print("\n\t---- VOTACIONES ----\n")
 print(" Estas son las votaciones para representante.")
 print(" Escoja uno de los siguientes candidatos para su voto: ")
@@ -44,23 +50,9 @@ num_votos = len(urna)
 print(f"Numero de votos en total: {num_votos}")
 
 
-
-
-# most_votes = max(set(urna), key = urna.count)
-def CountFrequency(my_list):
-
-    # Creating an empty dictionary
-    freq = {}
-    for items in my_list:
-        freq[items] = my_list.count(items)
-
-    for key, value in freq.items():
-        print ("% d : % d"%(key, value))
-
-CountFrequency(urna)
-print(f"Con {most_votes} votos el ganador es: x")
-
-
+cf = functions.CountFrequency(urna)
+winner = functions.sortedDicc(cf)
+print(f"Con X votos el ganador es: {winner.capitalize()}")
 
 
 print("\t\nGRACIAS")
